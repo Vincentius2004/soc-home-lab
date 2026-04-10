@@ -17,7 +17,7 @@ ke dalam input aplikasi untuk memanipulasi database.
 ```bash
 # Setup session
 SESS="PHPSESSID=MY_SESSION; security=low"
-![SQL Injection](screenshots/Screenshot_2026-04-10_11_44_09.png)
+![Step 1](screenshots/Screenshot_2026-04-10_11_44_23.png)
 
 # Basic SQL Injection
 curl -s "http://192.168.217.130/DVWA/vulnerabilities/sqli/?id=1' OR '1'='1&Submit=Submit" \
