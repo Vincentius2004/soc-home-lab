@@ -23,7 +23,7 @@ Ambil session cookie DVWA dari browser sebelum menjalankan serangan:
 ```bash
 SESS="PHPSESSID=ISI_SESSION_DISINI; security=low"
 ```
-![Step 1 - Setup Session](screenshoot/Screenshot_2026-04-12_173210.png)
+![Step 1 - Setup Session](Screenshoot/Screenshot_2026-04-12_173210.png)
 
 ## Attack Commands
 
@@ -56,12 +56,12 @@ for i in {1..5}; do
     -b "$SESS" -o /dev/null -w "Request $i - Status: %{http_code}\n"
 done
 ```
-![Step 1 - Setup Session](Screenshot_2026-04-12_80323.png)
+![Step 1 - Setup Session](Screenshoot/Screenshot_2026-04-12_80323.png)
 
 ## Detection di Wazuh
 
 ### Wazuh Threat Hunting — Rule 100012 Triggered
-![Wazuh XSS Detection](Screenshot_2026-04-12_180414.png)
+![Wazuh XSS Detection](Screenshoot/Screenshot_2026-04-12_180414.png)
 > Rule **100012** berhasil mendeteksi serangan XSS dengan level **10 (High)**.
 > Deskripsi: *DVWA: XSS Attack terdeteksi*
 
