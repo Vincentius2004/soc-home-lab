@@ -24,7 +24,7 @@ Auditd - Port 1514 (Agent) │- Port 55000 (API) │ Log & Alert
 ### Wazuh SIEM (192.168.217.128)
 - Wazuh Manager v4.14
 - Wazuh Indexer (Elasticsearch)
-- Wazuh Dashboard (Kibana)
+- Wazuh Dashboard 
 
 ### Ubuntu Target (192.168.217.130)
 - Apache2 (Web Server)
